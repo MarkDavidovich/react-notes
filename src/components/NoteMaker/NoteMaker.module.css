@@ -29,8 +29,9 @@
 }
 
 #textarea {
+  field-sizing: content;
   width: 100%;
-  height: 150px;
+  min-height: 4rem;
   resize: none;
 }
 
