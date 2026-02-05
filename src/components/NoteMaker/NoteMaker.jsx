@@ -35,6 +35,9 @@ const NoteMaker = ({ onAddNote }) => {
         className={style.btn}
         type="button"
         onClick={() => {
+          if (text.trim() === "" && title.trim() === "") {
+            return;
+          }
           onAddNote(title, text);
           clearInput();
         }}
