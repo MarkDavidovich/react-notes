@@ -16,16 +16,19 @@ const Notes = () => {
   const removeNote = (id) => {
     if (window.confirm("Delete note?")) {
       setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
+
+      setSelectedNote(null);
     }
   };
 
   const openNote = (note) => {
-    console.log(note);
     setSelectedNote(note);
   };
 
   return (
     <div className={style.container}>
+      <NoteMaker onAddNote={addNote} />
+      <NotesList notes={notes} onRemoveNote={removeNote} onClickNote={openNote} />
       {selectedNote && (
         <Modal
           onClose={() => setSelectedNote(null)}
@@ -35,9 +38,8 @@ const Notes = () => {
           text={selectedNote.text}
         />
       )}
-      <NoteMaker onAddNote={addNote} />
-      <NotesList notes={notes} onRemoveNote={removeNote} onClickNote={openNote} />
     </div>
   );
 };
+
 export default Notes;

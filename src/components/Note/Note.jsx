@@ -2,13 +2,19 @@ import style from "./Note.module.css";
 
 const Note = ({ id, title, text, dateCreated, onRemoveNote, onClickNote }) => {
   return (
-    <div className={style.container} onClick={() => onClickNote({ id, title, text, dateCreated })}>
+    <div
+      className={style.container}
+      onClick={() => {
+        onClickNote({ id, title, text, dateCreated });
+      }}
+    >
       <span className={style.header}>
         <p className={style.date}>{dateCreated}</p>
 
         <button
           className={style.btn}
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             onRemoveNote(id);
           }}
         >
