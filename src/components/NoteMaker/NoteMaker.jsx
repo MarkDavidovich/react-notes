@@ -5,9 +5,9 @@ const NoteMaker = ({ onAddNote }) => {
   const [text, setText] = useState("");
 
   return (
-    <form className={style.form}>
+    <form className={style.container}>
       <textarea
-        id="text-area"
+        id={style.textarea}
         placeholder="Your note..."
         onChange={(e) => {
           setText(e.target.value);

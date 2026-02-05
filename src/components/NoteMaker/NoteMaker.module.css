@@ -1,0 +1,30 @@
+.container {
+  width: 100;
+  margin: auto;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn {
+  background-color: #209e63bb;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0;
+  cursor: pointer;
+
+  font-weight: bold;
+  color: white;
+}
+
+#textarea {
+  padding: 0.2rem;
+  outline: none;
+  /* border: 1px solid lightgray; */
+  border: none;
+  font-weight: 500;
+}
