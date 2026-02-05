@@ -2,8 +2,6 @@ import style from "./NotesList.module.css";
 import Note from "../Note/Note";
 
 const NotesList = ({ notes }) => {
-  console.log(notes);
-
   return (
     <div>
       {notes.map((n) => (
