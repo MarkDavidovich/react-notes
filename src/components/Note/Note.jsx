@@ -1,6 +1,6 @@
 import style from "./Note.module.css";
 
-const Note = ({ id, text, dateCreated, onRemoveNote }) => {
+const Note = ({ id, title, text, dateCreated, onRemoveNote }) => {
   return (
     <div className={style.container}>
       <span className={style.header}>
@@ -14,6 +14,7 @@ const Note = ({ id, text, dateCreated, onRemoveNote }) => {
           ✖
         </button>
       </span>
+      {title.length > 0 ? <h1 className={style.title}>{title}</h1> : ""}
       <p className={style.text}>{text}</p>
     </div>
   );

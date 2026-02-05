@@ -7,8 +7,8 @@ import moment from "moment";
 const Notes = () => {
   const [notes, setNotes] = useState([]);
 
-  const addNote = (noteText) => {
-    setNotes((prevNotes) => [...prevNotes, { id: Date.now(), text: noteText, dateCreated: moment().format("MMMM Do, h:mm A") }]);
+  const addNote = (noteTitle, noteText) => {
+    setNotes((prevNotes) => [...prevNotes, { id: Date.now(), title: noteTitle, text: noteText, dateCreated: moment().format("MMMM Do, h:mm A") }]);
   };
 
   const removeNote = (id) => {
