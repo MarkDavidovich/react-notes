@@ -5,6 +5,11 @@ const NoteMaker = ({ onAddNote }) => {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
 
+  const clearInput = () => {
+    setText("");
+    setTitle("");
+  };
+
   return (
     <form className={style.container}>
       <input
@@ -14,6 +19,7 @@ const NoteMaker = ({ onAddNote }) => {
         onChange={(e) => {
           setTitle(e.target.value);
         }}
+        value={title}
       />
 
       <textarea
@@ -22,9 +28,17 @@ const NoteMaker = ({ onAddNote }) => {
         onChange={(e) => {
           setText(e.target.value);
         }}
+        value={text}
       />
 
-      <button className={style.btn} type="button" onClick={() => onAddNote(title, text)}>
+      <button
+        className={style.btn}
+        type="button"
+        onClick={() => {
+          onAddNote(title, text);
+          clearInput();
+        }}
+      >
         Add
       </button>
     </form>
