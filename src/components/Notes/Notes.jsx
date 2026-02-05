@@ -12,10 +12,10 @@ const Notes = () => {
   };
 
   return (
-    <>
+    <div className={style.container}>
       <NoteMaker onAddNote={addNote} />
       <NotesList notes={notes} />
-    </>
+    </div>
   );
 };
 export default Notes;
