@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Notes from "./components/Notes/Notes";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Notes />
+    </>
+  );
 }
 
 export default App;
