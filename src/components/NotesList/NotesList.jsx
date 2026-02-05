@@ -1,12 +1,14 @@
 import style from "./NotesList.module.css";
 import Note from "../Note/Note";
 
-const NotesList = () => {
+const NotesList = ({ notes }) => {
+  console.log(notes);
+
   return (
     <div>
-      NotesList
-      <Note />
-      <Note />
+      {notes.map((n) => (
+        <Note key={n.id} text={n.text} dateCreated={n.dateCreated} />
+      ))}
     </div>
   );
 };

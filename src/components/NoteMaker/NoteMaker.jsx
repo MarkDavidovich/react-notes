@@ -1,9 +1,8 @@
 import { useState } from "react";
 import style from "./NoteMaker.module.css";
 
-const NoteMaker = () => {
-  //textarea for text input, below it a button to process the text and create a note cmp in a note container
-  const [noteText, setNoteText] = useState("");
+const NoteMaker = ({ onAddNote }) => {
+  const [text, setText] = useState("");
 
   return (
     <form className={style.form}>
@@ -11,10 +10,11 @@ const NoteMaker = () => {
         id="text-area"
         placeholder="Your note..."
         onChange={(e) => {
-          setNoteText(e.target.value);
+          setText(e.target.value);
         }}
       />
-      <button className={style.btn} type="button" onClick={() => {}}>
+
+      <button className={style.btn} type="button" onClick={() => onAddNote(text)}>
         Add
       </button>
     </form>
