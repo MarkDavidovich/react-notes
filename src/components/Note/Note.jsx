@@ -2,9 +2,12 @@ import style from "./Note.module.css";
 
 const Note = ({ id, text, dateCreated }) => {
   return (
-    <div>
-      <p>{dateCreated}</p>
-      <p>{text}</p>
+    <div className={style.container}>
+      <span className={style.header}>
+        <p className={style.date}>{dateCreated}</p>
+        <button className={style.btn}>✖</button>
+      </span>
+      <p className={style.text}>{text}</p>
     </div>
   );
 };
