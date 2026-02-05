@@ -3,7 +3,7 @@ import Note from "../Note/Note";
 
 const NotesList = ({ notes }) => {
   return (
-    <div>
+    <div className={style.container}>
       {notes.map((n) => (
         <Note key={n.id} text={n.text} dateCreated={n.dateCreated} />
       ))}
