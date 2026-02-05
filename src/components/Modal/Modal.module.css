@@ -13,23 +13,38 @@
   gap: 0.5rem;
   background-color: white;
   min-width: 40%;
-  min-height: 30%;
   border-radius: 0.5rem;
   padding: 1.5rem;
   font-weight: 500;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
 }
 
 .date {
   color: gray;
 }
 
-.btn {
-  background: none;
+#title {
   border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  outline: none;
+}
+
+#text {
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  resize: none;
+  field-sizing: content;
+}
+
+.btn {
+  background-color: #209e63bb;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0;
   cursor: pointer;
+
+  font-weight: bold;
+  color: white;
 }

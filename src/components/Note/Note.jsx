@@ -1,6 +1,6 @@
 import style from "./Note.module.css";
 
-const Note = ({ id, title, text, dateCreated, onRemoveNote, onClickNote }) => {
+const Note = ({ id, title, text, dateCreated, dateEdited, onRemoveNote, onClickNote }) => {
   return (
     <div
       className={style.container}
@@ -9,7 +9,7 @@ const Note = ({ id, title, text, dateCreated, onRemoveNote, onClickNote }) => {
       }}
     >
       <span className={style.header}>
-        <p className={style.date}>{dateCreated}</p>
+        <p className={style.date}>Created: {dateCreated}</p>
 
         <button
           className={style.btn}
@@ -23,6 +23,7 @@ const Note = ({ id, title, text, dateCreated, onRemoveNote, onClickNote }) => {
       </span>
       {title.length > 0 ? <h1 className={style.title}>{title}</h1> : ""}
       <p className={style.text}>{text}</p>
+      {dateEdited && <p className={style.edited}>Edited: {dateEdited}</p>}
     </div>
   );
 };

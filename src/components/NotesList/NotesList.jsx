@@ -5,7 +5,16 @@ const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
   return (
     <div className={style.container}>
       {notes.map((n) => (
-        <Note key={n.id} id={n.id} title={n.title} text={n.text} dateCreated={n.dateCreated} onRemoveNote={onRemoveNote} onClickNote={onClickNote} />
+        <Note
+          key={n.id}
+          id={n.id}
+          title={n.title}
+          text={n.text}
+          dateCreated={n.dateCreated}
+          dateEdited={n.dateEdited}
+          onRemoveNote={onRemoveNote}
+          onClickNote={onClickNote}
+        />
       ))}
     </div>
   );

@@ -9,8 +9,9 @@ const Notes = () => {
   const [notes, setNotes] = useState([]);
   const [selectedNote, setSelectedNote] = useState(null);
 
+  console.log(notes);
   const addNote = (noteTitle, noteText) => {
-    setNotes((prevNotes) => [...prevNotes, { id: Date.now(), title: noteTitle, text: noteText, dateCreated: moment().format("MMMM Do, h:mm A") }]);
+    setNotes((prevNotes) => [...prevNotes, { id: Date.now(), title: noteTitle, text: noteText, dateCreated: getCurrentTime(), dateEdited: null }]);
   };
 
   const removeNote = (id) => {
@@ -21,8 +22,23 @@ const Notes = () => {
     }
   };
 
+  const editNote = (id, newText, newTitle) => {
+    setNotes((prevNotes) =>
+      prevNotes.map((n) => {
+        if (n.id === id) {
+          return { ...n, text: newText, title: newTitle, dateEdited: getCurrentTime() };
+        }
+        return n;
+      }),
+    );
+  };
+
   const openNote = (note) => {
     setSelectedNote(note);
+  };
+
+  const getCurrentTime = () => {
+    return moment().format("MMMM Do, h:mm A");
   };
 
   return (
@@ -32,10 +48,12 @@ const Notes = () => {
       {selectedNote && (
         <Modal
           onClose={() => setSelectedNote(null)}
+          onEditNote={editNote}
           id={selectedNote.id}
           dateCreated={selectedNote.dateCreated}
           title={selectedNote.title}
           text={selectedNote.text}
+          dateEdited={selectedNote.dateEdited}
         />
       )}
     </div>

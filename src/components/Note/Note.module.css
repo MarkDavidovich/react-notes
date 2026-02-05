@@ -11,14 +11,16 @@
   min-height: 180px;
 }
 
-.date {
+.date,
+.edited {
   color: gray;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .text {
   font-size: 1.2rem;
   overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .btn {
@@ -33,8 +35,13 @@
 }
 
 .date,
-.title {
+.title,
+.edited {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.edited {
+  margin-top: auto;
 }
