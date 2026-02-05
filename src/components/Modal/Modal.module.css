@@ -1,0 +1,35 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: white;
+  min-width: 40%;
+  min-height: 30%;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  color: gray;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
