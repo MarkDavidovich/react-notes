@@ -13,18 +13,17 @@ const NoteMaker = ({ onAddNote }) => {
     setTitle("");
   };
 
-  const onSelectCategory = (newColor, newCategory) => {
+  const selectCategory = (newColor, newCategory) => {
     setColor(newColor);
     setCategory(newCategory);
   };
 
-  //give the note a color property which changes it's background color
-
   return (
-    <form className={style.container}>
+    <form className={style.container} style={{ backgroundColor: color }}>
       <input
         type="text"
         id={style.title}
+        style={{ backgroundColor: color }}
         placeholder="Title"
         onChange={(e) => {
           setTitle(e.target.value);
@@ -34,6 +33,7 @@ const NoteMaker = ({ onAddNote }) => {
 
       <textarea
         id={style.textarea}
+        style={{ backgroundColor: color }}
         placeholder="Your note..."
         onChange={(e) => {
           setText(e.target.value);
@@ -41,7 +41,7 @@ const NoteMaker = ({ onAddNote }) => {
         value={text}
       />
 
-      <CategoryPicker />
+      <CategoryPicker onSelectCategory={selectCategory} />
 
       <button
         className={style.btn}
