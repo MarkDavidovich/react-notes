@@ -7,3 +7,48 @@
 
   flex-wrap: wrap;
 }
+
+.query {
+  min-width: 40%;
+  display: flex;
+
+  margin: auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+#search {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding-left: 1.2rem;
+  flex: 2;
+  font-weight: 500;
+}
+
+.filter {
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.filter > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  width: calc((100%) / 5);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  border: none;
+  padding: 0.2rem 1rem;
+  color: rgb(63, 63, 63);
+  font-weight: 500;
+}
+
+.filter > button.active {
+  background-color: #209e63bb;
+  color: white;
+}
