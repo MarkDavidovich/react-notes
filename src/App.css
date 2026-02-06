@@ -14,6 +14,7 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  transition: background-color 0.3s ease;
 }
 
 html {
