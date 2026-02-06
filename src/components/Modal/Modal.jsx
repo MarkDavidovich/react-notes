@@ -8,7 +8,6 @@ const Modal = ({ onClose, onEditNote, id, dateCreated, title, text, dateEdited, 
   const [newTitle, setNewTitle] = useState(title);
   const [newColor, setNewColor] = useState(color);
   const [newCategory, setNewCategory] = useState(category);
-  const [newDateEdited, setNewDateEdited] = useState(dateEdited);
 
   const selectNewCategory = (newColor, newCategory) => {
     setNewColor(newColor);
@@ -20,7 +19,7 @@ const Modal = ({ onClose, onEditNote, id, dateCreated, title, text, dateEdited, 
       <div className={style.modal} style={{ backgroundColor: newColor }} onClick={(e) => e.stopPropagation()}>
         <span className={style.header}>
           <p className={style.date}>Created: {dateCreated}</p>
-          {dateEdited && <p className={style.edited}>Edited: {newDateEdited}</p>}
+          {dateEdited && <p className={style.edited}>Edited: {dateEdited}</p>}
         </span>
         <input type="text" id={style.title} style={{ backgroundColor: newColor }} value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
         <textarea id={style.text} style={{ backgroundColor: newColor }} value={newText} onChange={(e) => setNewText(e.target.value)}></textarea>
@@ -29,8 +28,7 @@ const Modal = ({ onClose, onEditNote, id, dateCreated, title, text, dateEdited, 
           className={style.btn}
           onClick={() => {
             if (newText !== "" || newTitle !== "") {
-              setNewDateEdited(moment().format("MMMM Do, h:mm A"));
-              onEditNote(id, newText, newTitle, newColor, newCategory, newDateEdited);
+              onEditNote(id, newText, newTitle, newColor, newCategory, moment().format("MMMM Do, h:mm A"));
               onClose();
             }
           }}
