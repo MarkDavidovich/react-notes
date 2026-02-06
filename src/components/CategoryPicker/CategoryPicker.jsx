@@ -1,13 +1,7 @@
 import style from "./CategoryPicker.module.css";
+import categories from "../../utils/categories";
 
 const ColorPicker = ({ onSelectCategory }) => {
-  const categories = [
-    { category: "personal", color: "#cddafd" },
-    { category: "work", color: "#eae4e9" },
-    { category: "study", color: "#fad2e1" },
-    { category: "other", color: "#fff1e6" },
-  ];
-
   return (
     <div className={style.menu}>
       {categories.map((c) => {
