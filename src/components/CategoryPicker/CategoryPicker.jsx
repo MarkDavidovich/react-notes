@@ -8,33 +8,22 @@ const ColorPicker = ({ onSelectCategory }) => {
     { category: "other", color: "#caffbf" },
   ];
 
-  //style[categories[0].category]
-  // categories.map((c) => {
-  //   return (
-  //     <button
-  //       type="button"
-  //       className={style[c.category]}
-  //       onClick={() => {
-  //         onSelectCategory(c.color, c.category);
-  //       }}
-  //     ></button>
-  //   );
-  // });
-
   return (
     <div className={style.menu}>
-      <button type="button" className={style.personal}>
-        personal
-      </button>
-      <button type="button" className={style.work}>
-        work
-      </button>
-      <button type="button" className={style.study}>
-        studying
-      </button>
-      <button type="button" className={style.other}>
-        other
-      </button>
+      {categories.map((c) => {
+        return (
+          <button
+            type="button"
+            key={c.color}
+            className={style[c.category]}
+            onClick={() => {
+              onSelectCategory(c.color, c.category);
+            }}
+          >
+            {c.category}
+          </button>
+        );
+      })}
     </div>
   );
 };
