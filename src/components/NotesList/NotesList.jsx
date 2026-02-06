@@ -5,10 +5,8 @@ import { useState } from "react";
 const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
   const [searchedText, setSearchedText] = useState("");
   const [filterCategory, setFilterCategory] = useState("");
-  // const [activeCategory, setActiveCategory] = useState(null);
 
   const categories = ["personal", "work", "study", "other"];
-
   const filteredNotes = notes.filter((n) => {
     const textMatch = n.title.toLowerCase().includes(searchedText.toLowerCase()) || n.text.toLowerCase().includes(searchedText.toLowerCase());
     const categoryMatch = filterCategory ? n.category === filterCategory : true;
@@ -30,6 +28,7 @@ const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
             setSearchedText(e.target.value);
           }}
         />
+
         <div className={style.filter}>
           {categories.map((c) => (
             <button
@@ -44,6 +43,7 @@ const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
           ))}
         </div>
       </div>
+
       <div className={style.container}>
         {filteredNotes.map((n) => (
           <Note

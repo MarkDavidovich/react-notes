@@ -65,7 +65,9 @@ const Notes = () => {
   return (
     <div className={style.container}>
       <NoteMaker onAddNote={addNote} />
+
       <NotesList notes={notes} onRemoveNote={removeNote} onClickNote={openNote} />
+
       {selectedNote && (
         <Modal
           onClose={() => setSelectedNote(null)}

@@ -21,8 +21,11 @@ const Modal = ({ onClose, onEditNote, id, dateCreated, title, text, dateEdited, 
           <p className={style.date}>Created: {dateCreated}</p>
           {dateEdited && <p className={style.edited}>Edited: {dateEdited}</p>}
         </span>
+
         <input type="text" id={style.title} style={{ backgroundColor: newColor }} value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+
         <textarea id={style.text} style={{ backgroundColor: newColor }} value={newText} onChange={(e) => setNewText(e.target.value)}></textarea>
+
         <CategoryPicker onSelectCategory={selectNewCategory} />
         <button
           className={style.btn}

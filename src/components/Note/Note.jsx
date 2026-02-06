@@ -22,6 +22,7 @@ const Note = ({ id, title, text, dateCreated, dateEdited, onRemoveNote, onClickN
           ✖
         </button>
       </span>
+
       {title.length > 0 ? <h1 className={style.title}>{title}</h1> : ""}
       <p className={style.text}>{text}</p>
       {dateEdited && <p className={style.edited}>Edited: {dateEdited}</p>}

@@ -4,14 +4,12 @@
   height: 100%;
   display: flex;
   gap: 1rem;
-
   flex-wrap: wrap;
 }
 
 .query {
   min-width: 40%;
   display: flex;
-
   margin: auto;
   background-color: #fff;
   border-radius: 0.5rem;
