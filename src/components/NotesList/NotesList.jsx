@@ -56,6 +56,7 @@ const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
             onRemoveNote={onRemoveNote}
             onClickNote={onClickNote}
             color={n.color}
+            category={n.category}
           />
         ))}
       </div>
