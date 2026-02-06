@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style from "./Modal.module.css";
+import CategoryPicker from "../CategoryPicker/CategoryPicker";
 
 const Modal = ({ onClose, onEditNote, id, dateCreated, title, text }) => {
   const [newText, setNewText] = useState(text);
@@ -13,6 +14,7 @@ const Modal = ({ onClose, onEditNote, id, dateCreated, title, text }) => {
         </span>
         <input type="text" id={style.title} value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
         <textarea id={style.text} value={newText} onChange={(e) => setNewText(e.target.value)}></textarea>
+        <CategoryPicker />
         <button
           className={style.btn}
           onClick={() => {

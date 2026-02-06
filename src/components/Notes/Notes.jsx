@@ -16,13 +16,15 @@ const Notes = () => {
   });
   const [selectedNote, setSelectedNote] = useState(null);
 
-  const addNote = (noteTitle, noteText) => {
+  const addNote = (noteTitle, noteText, noteColor = "#ffffff", noteCategory = null) => {
     const newNote = {
       id: Date.now(),
       title: noteTitle,
       text: noteText,
       dateCreated: getCurrentTime(),
       dateEdited: null,
+      color: noteColor,
+      category: noteCategory,
     };
 
     setNotes((prevNotes) => {
