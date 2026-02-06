@@ -16,7 +16,7 @@ const Notes = () => {
   });
   const [selectedNote, setSelectedNote] = useState(null);
 
-  const addNote = (noteTitle, noteText, noteColor = "#ffffff", noteCategory = null) => {
+  const addNote = (noteTitle, noteText, noteColor = "#ffffff", noteCategory = "none") => {
     const newNote = {
       id: Date.now(),
       title: noteTitle,
