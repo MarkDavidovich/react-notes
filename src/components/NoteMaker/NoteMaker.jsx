@@ -5,7 +5,7 @@ import CategoryPicker from "../CategoryPicker/CategoryPicker";
 const NoteMaker = ({ onAddNote }) => {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("none");
   const [color, setColor] = useState("#ffffff");
 
   const clearInput = () => {
@@ -52,6 +52,7 @@ const NoteMaker = ({ onAddNote }) => {
           }
           onAddNote(title, text, color, category);
           setColor("#ffffff");
+          setCategory("none");
           clearInput();
         }}
       >
