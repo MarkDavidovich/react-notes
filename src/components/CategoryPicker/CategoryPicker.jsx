@@ -2,10 +2,10 @@ import style from "./CategoryPicker.module.css";
 
 const ColorPicker = ({ onSelectCategory }) => {
   const categories = [
-    { category: "personal", color: "#a0c4ff" },
-    { category: "work", color: "#fdffb6" },
-    { category: "study", color: "#ffc6ff" },
-    { category: "other", color: "#caffbf" },
+    { category: "personal", color: "#cddafd" },
+    { category: "work", color: "#eae4e9" },
+    { category: "study", color: "#fad2e1" },
+    { category: "other", color: "#fff1e6" },
   ];
 
   return (
@@ -15,7 +15,7 @@ const ColorPicker = ({ onSelectCategory }) => {
           <button
             type="button"
             key={c.color}
-            className={style[c.category]}
+            style={{ backgroundColor: c.color }}
             onClick={() => {
               onSelectCategory(c.color, c.category);
             }}
