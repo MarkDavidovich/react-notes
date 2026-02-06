@@ -21,7 +21,7 @@ const Notes = () => {
       id: Date.now(),
       title: noteTitle,
       text: noteText,
-      dateCreated: getCurrentTime(),
+      dateCreated: moment().format("MMMM Do, h:mm A"),
       dateEdited: null,
       color: noteColor,
       category: noteCategory,
@@ -45,11 +45,11 @@ const Notes = () => {
     }
   };
 
-  const editNote = (id, newText, newTitle) => {
+  const editNote = (id, newText, newTitle, newColor, newCategory, newDateEdited) => {
     setNotes((prevNotes) => {
       const updatedNotes = prevNotes.map((n) => {
         if (n.id === id) {
-          return { ...n, text: newText, title: newTitle, dateEdited: getCurrentTime() };
+          return { ...n, text: newText, title: newTitle, dateEdited: newDateEdited, color: newColor, category: newCategory };
         }
         return n;
       });
@@ -60,10 +60,6 @@ const Notes = () => {
 
   const openNote = (note) => {
     setSelectedNote(note);
-  };
-
-  const getCurrentTime = () => {
-    return moment().format("MMMM Do, h:mm A");
   };
 
   return (
@@ -80,6 +76,7 @@ const Notes = () => {
           text={selectedNote.text}
           dateEdited={selectedNote.dateEdited}
           color={selectedNote.color}
+          category={selectedNote.category}
         />
       )}
     </div>
