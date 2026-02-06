@@ -1,11 +1,12 @@
 import style from "./Note.module.css";
 
-const Note = ({ id, title, text, dateCreated, dateEdited, onRemoveNote, onClickNote }) => {
+const Note = ({ id, title, text, dateCreated, dateEdited, onRemoveNote, onClickNote, color }) => {
   return (
     <div
       className={style.container}
+      style={{ backgroundColor: color }}
       onClick={() => {
-        onClickNote({ id, title, text, dateCreated });
+        onClickNote({ id, title, text, dateCreated, dateEdited, color });
       }}
     >
       <span className={style.header}>

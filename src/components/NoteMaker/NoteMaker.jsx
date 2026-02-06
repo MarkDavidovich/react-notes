@@ -51,6 +51,7 @@ const NoteMaker = ({ onAddNote }) => {
             return;
           }
           onAddNote(title, text, color, category);
+          setColor("#ffffff");
           clearInput();
         }}
       >

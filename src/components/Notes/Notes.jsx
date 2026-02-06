@@ -79,6 +79,7 @@ const Notes = () => {
           title={selectedNote.title}
           text={selectedNote.text}
           dateEdited={selectedNote.dateEdited}
+          color={selectedNote.color}
         />
       )}
     </div>

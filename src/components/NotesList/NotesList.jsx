@@ -4,6 +4,7 @@ import Note from "../Note/Note";
 const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
   return (
     <div className={style.container}>
+      {/* <div>Notes here? if yes, sort By a dropdown</div> */}
       {notes.map((n) => (
         <Note
           key={n.id}
@@ -14,6 +15,7 @@ const NotesList = ({ notes, onRemoveNote, onClickNote }) => {
           dateEdited={n.dateEdited}
           onRemoveNote={onRemoveNote}
           onClickNote={onClickNote}
+          color={n.color}
         />
       ))}
     </div>
