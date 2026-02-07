@@ -19,8 +19,9 @@
 
 .text {
   font-size: 1.2rem;
-  overflow-wrap: break-word;
   white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn {
@@ -36,8 +37,7 @@
 
 .date,
 .title,
-.edited,
-.text {
+.edited {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
