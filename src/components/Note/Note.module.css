@@ -36,7 +36,8 @@
 
 .date,
 .title,
-.edited {
+.edited,
+.text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
